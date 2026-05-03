@@ -4,79 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kappa Matcha | Premium Japanese Tea</title>
-    <!-- นำเข้าฟอนต์ Google Fonts ให้ดูแพง -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2d3436;
+            --bg-color: #fcfcfc;
+        }
+        
         body {
             margin: 0;
             padding: 0;
             font-family: 'Noto Sans Thai', sans-serif;
-            background-color: #fcfcfc; /* สีขาวนวลแบบญี่ปุ่น */
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
         }
 
-        /* ส่วนหัว (Hero Section) */
+        /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
-                        url('ใส่ลิงก์รูปภาพหลักตรงนี้.jpg') no-repeat center center/cover;
+            background-color: #fff;
+            padding: 0 20px;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 0.9rem;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            color: #888;
         }
 
-        /* ส่วนเนื้อหา */
+        /* Content Section */
         .content-section {
-            padding: 80px 20px;
-            max-width: 900px;
+            padding: 100px 20px;
+            max-width: 1100px;
             margin: 0 auto;
-            text-align: center;
         }
 
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Product Grid */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
         }
 
         .product-card img {
             width: 100%;
             height: auto;
-            border-radius: 4px; /* มุมมนนิดเดียวแบบมินิมอล */
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* ปุ่มติดต่อ */
-        .btn-contact {
+        .product-info {
+            margin-top: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .product-info p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Contact Section */
+        .contact-area {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f7f7f7;
+        }
+
+        .btn-line {
             display: inline-block;
-            margin-top: 40px;
-            padding: 12px 35px;
-            border: 1px solid #333;
+            padding: 15px 40px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
             text-decoration: none;
-            color: #333;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        .btn-contact:hover {
-            background-color: #333;
+        .btn-line:hover {
+            background-color: var(--primary-color);
             color: #fff;
         }
 
         footer {
-            padding: 40px;
-            font-size: 12px;
+            padding: 50px 20px;
             text-align: center;
+            font-size: 0.75rem;
+            color: #bbb;
             letter-spacing: 1px;
-            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -84,30 +145,40 @@
 
     <section class="hero">
         <h1>KAPPA MATCHA</h1>
-        <p>Authentic Japanese Green Tea</p>
+        <p>Direct from Uji, Kyoto</p>
     </section>
 
     <section class="content-section">
-        <h2>OUR PHILOSOPHY</h2>
-        <p>เราคัดสรรชาจากแหล่งปลูกที่ดีที่สุดในญี่ปุ่น เพื่อส่งมอบรสชาติที่แท้จริงถึงมือคุณ</p>
-
-        <div class="product-grid">
-            <!-- เอารูปที่ทำจาก Canva มาใส่ตรง src -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500" alt="Product 1">
-                <p>Ceremonial Grade</p>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500" alt="Product 2">
-                <p>Premium Culinary</p>
-            </div>
+        <div class="section-title">
+            <h2>OUR COLLECTIONS</h2>
+            <p>สัมผัสรสชาติอูมามิจากใบชาแท้คุณภาพพรีเมียม</p>
         </div>
 
-        <a href="https://lin.ee/xxxxxx" class="btn-contact">ORDER VIA LINE</a>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="product1.png" alt="Ceremonial Samidori">
+                <div class="product-info">
+                    <h3>Ceremonial Samidori</h3>
+                    <p>Single Cultivar from Uji, Kyoto</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="product2.png" alt="Kappa Latte">
+                <div class="product-info">
+                    <h3>The Art of Umami</h3>
+                    <p>Perfectly balanced for your daily cup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-area">
+        <p>สอบถามรายละเอียดหรือสั่งซื้อสินค้า</p>
+        <a href="https://lin.ee/xxxxxx" class="btn-line">ORDER VIA LINE</a>
     </section>
 
     <footer>
-        &copy; 2026 KAPPA MATCHA. ALL RIGHTS RESERVED.
+        &copy; 2026 KAPPA MATCHA OFFICIAL. ALL RIGHTS RESERVED.
     </footer>
 
 </body>
