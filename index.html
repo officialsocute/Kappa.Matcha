@@ -3,84 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kappa Matcha | Premium Japanese Tea</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <!-- ใส่ Library สำหรับ Animation ให้ดูโปร -->
+    <title>Kappa Matcha | 宇治抹茶</title>
+    <!-- ฟอนต์ญี่ปุ่นและไทยแบบ Serif (มีหัว) เพื่อความหรูหรา -->
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Noto+Serif+Thai:wght@300;400&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        :root { --primary: #1a1a1a; --soft-bg: #f9f9f9; }
-        body { margin: 0; font-family: 'Noto Sans Thai', sans-serif; background: #fff; color: var(--primary); overflow-x: hidden; }
-        
-        /* Navigation */
-        nav { padding: 30px; text-align: center; position: absolute; width: 100%; z-index: 10; letter-spacing: 2px; font-size: 0.8rem; }
+        :root {
+            --gold: #b5a489;
+            --dark: #1c1c1c;
+            --bg: #fcfaf5; /* สีขาวนวลกระดาษญี่ปุ่น */
+        }
 
-        /* Hero Section - ใช้รูป product2 เป็นพื้นหลังแบบจางๆ ให้ดูหรู */
+        body {
+            margin: 0;
+            font-family: 'Shippori Mincho', 'Noto Serif Thai', serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* ตกแต่งพื้นหลังให้เหมือนมี Texture กระดาษ */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 100;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
+            font-size: 0.7rem;
+        }
+
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('product2.png') no-repeat center center/cover;
-            text-align: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('product2.png') no-repeat center center/cover;
+            color: #fff;
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 5rem); margin: 0; font-weight: normal; letter-spacing: 8px; }
-        .hero p { letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-top: 20px; opacity: 0.8; }
 
-        /* Content */
-        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
-        .intro { text-align: center; margin-bottom: 100px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .intro h2 { font-size: 2rem; font-weight: 300; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
 
-        /* Grid Layout */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .grid img { width: 100%; filter: grayscale(20%); transition: 0.5s; }
-        .grid img:hover { filter: grayscale(0%); transform: scale(1.02); }
-        .text-box { padding: 40px; }
+        .hero h1 {
+            font-size: clamp(3.5rem, 12vw, 6rem);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 15px;
+            text-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
 
-        /* Button */
-        .btn { display: inline-block; padding: 20px 50px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; transition: 0.4s; letter-spacing: 2px; font-size: 0.8rem; margin-top: 40px; }
-        .btn:hover { background: var(--primary); color: #fff; }
+        /* ตัวอักษรแนวตั้งแบบญี่ปุ่น */
+        .vertical-text {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            color: rgba(255,255,255,0.7);
+            font-family: 'Shippori Mincho', serif;
+        }
 
-        footer { padding: 100px 20px; text-align: center; font-size: 0.7rem; letter-spacing: 2px; color: #999; }
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 20px;
+        }
 
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 40px; } .hero h1 { font-size: 3rem; } }
+        .intro {
+            text-align: center;
+            margin-bottom: 120px;
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .jp-sub {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Product Showcase */
+        .product-feature {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 150px;
+        }
+
+        .product-feature.reverse {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .product-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img-wrap img {
+            width: 100%;
+            display: block;
+            transition: 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .product-img-wrap:hover img {
+            transform: scale(1.05);
+        }
+
+        .desc-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        /* CTA Button */
+        .cta-wrap {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .btn-premium {
+            display: inline-block;
+            padding: 25px 60px;
+            border: 1px solid var(--dark);
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            transition: 0.5s;
+            position: relative;
+        }
+
+        .btn-premium:hover {
+            background-color: var(--dark);
+            color: #fff;
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 900px) {
+            .product-feature, .product-feature.reverse { grid-template-columns: 1fr; gap: 40px; }
+            .vertical-text { display: none; }
+        }
     </style>
 </head>
 <body>
 
-    <nav data-aos="fade-down">KAPPA MATCHA OFFICIAL</nav>
+    <nav data-aos="fade-down">
+        <div>EST. 2026</div>
+        <div>KAPPA MATCHA</div>
+        <div>UJI / JAPAN</div>
+    </nav>
 
     <section class="hero">
-        <h1 data-aos="fade-up" data-aos-duration="1000">KAPPA MATCHA</h1>
-        <p data-aos="fade-up" data-aos-delay="300">The Art of Japanese Umami</p>
+        <div class="vertical-text">プレミアム抹茶 — 宇治京都</div>
+        <div class="hero-content">
+            <h1 data-aos="zoom-out" data-aos-duration="2000">KAPPA</h1>
+            <p data-aos="fade-up" data-aos-delay="500">AUTHENTIC JAPANESE TEA INSTITUTION</p>
+        </div>
     </section>
 
     <div class="container">
         <div class="intro" data-aos="fade-up">
-            <h2>Our Philosophy</h2>
-            <p>เราคัดสรรชาจากแหล่งปลูกที่ดีที่สุดในญี่ปุ่น เพื่อส่งมอบรสชาติที่แท้จริงถึงมือคุณ</p>
+            <span class="jp-sub">私たちの理念</span>
+            <h2>The Art of Umami</h2>
+            <p>จากแหล่งปลูกชาที่ดีที่สุดในเมืองอูจิ สู่กระบวนการผลิตที่พิถีพิถัน <br> เพื่อส่งมอบรสชาติมัทฉะแท้เกรดพิธีการที่เปี่ยมด้วยคุณภาพ</p>
         </div>
 
-        <div class="grid">
-            <div class="img-box" data-aos="fade-right">
+        <!-- Product 1 Section -->
+        <div class="product-feature">
+            <div class="product-img-wrap" data-aos="reveal-right">
                 <img src="product1.png" alt="Ceremonial Samidori">
             </div>
-            <div class="text-box" data-aos="fade-left">
-                <h3>Ceremonial Grade</h3>
-                <p>สัมผัสประสบการณ์การดื่มชาในแบบดั้งเดิม ด้วย Single Cultivar ที่คัดเลือกมาอย่างพิถีพิถัน</p>
+            <div class="desc-box" data-aos="fade-left">
+                <span class="jp-sub">最高級抹茶</span>
+                <h3>Ceremonial Samidori</h3>
+                <p>สัมผัสความนุ่มนวลและกลิ่นหอมอันเป็นเอกลักษณ์ของสายพันธุ์ Samidori ซึ่งเป็น Single Cultivar ที่เราภูมิใจนำเสนอ</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 100px;" data-aos="zoom-in">
-            <a href="https://lin.ee/xxxxxx" class="btn">DISCOVER MORE ON LINE</a>
+        <!-- Section ระหว่างทาง -->
+        <div class="intro" data-aos="fade-up">
+            <span class="jp-sub">こだわり</span>
+            <h2>Pure Precision</h2>
+            <p>ทุกรายละเอียดคือความใส่ใจ ตั้งแต่การควบคุมอุณหภูมิ <br> จนถึงความละเอียดของผงมัทฉะที่ต้องสมบูรณ์แบบที่สุด</p>
         </div>
     </div>
 
-    <footer>&copy; 2026 KAPPA MATCHA. PRIVACY POLICY.</footer>
+    <div class="cta-wrap">
+        <div data-aos="zoom-in">
+            <a href="https://lin.ee/xxxxxx" class="btn-premium">LINE OFFICIAL ACCOUNT</a>
+        </div>
+    </div>
 
-    <!-- Script สำหรับเล่น Animation -->
+    <footer>
+        &copy; 2026 KAPPA MATCHA OFFICIAL. <br>
+        DESIGNED FOR PREMIUM QUALITY.
+    </footer>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 200
+        });
+    </script>
 </body>
 </html>
