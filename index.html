@@ -5,181 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kappa Matcha | Premium Japanese Tea</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <!-- ใส่ Library สำหรับ Animation ให้ดูโปร -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        :root {
-            --primary-color: #2d3436;
-            --bg-color: #fcfcfc;
-        }
+        :root { --primary: #1a1a1a; --soft-bg: #f9f9f9; }
+        body { margin: 0; font-family: 'Noto Sans Thai', sans-serif; background: #fff; color: var(--primary); overflow-x: hidden; }
         
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans Thai', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary-color);
-            line-height: 1.6;
-        }
+        /* Navigation */
+        nav { padding: 30px; text-align: center; position: absolute; width: 100%; z-index: 10; letter-spacing: 2px; font-size: 0.8rem; }
 
-        /* Hero Section */
+        /* Hero Section - ใช้รูป product2 เป็นพื้นหลังแบบจางๆ ให้ดูหรู */
         .hero {
-            height: 80vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('product2.png') no-repeat center center/cover;
             text-align: center;
-            background-color: #fff;
-            padding: 0 20px;
         }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 5rem); margin: 0; font-weight: normal; letter-spacing: 8px; }
+        .hero p { letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-top: 20px; opacity: 0.8; }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            letter-spacing: 4px;
-            margin: 0;
-            font-weight: normal;
-        }
+        /* Content */
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .intro { text-align: center; margin-bottom: 100px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .intro h2 { font-size: 2rem; font-weight: 300; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
 
-        .hero p {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            color: #888;
-        }
+        /* Grid Layout */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .grid img { width: 100%; filter: grayscale(20%); transition: 0.5s; }
+        .grid img:hover { filter: grayscale(0%); transform: scale(1.02); }
+        .text-box { padding: 40px; }
 
-        /* Content Section */
-        .content-section {
-            padding: 100px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        /* Button */
+        .btn { display: inline-block; padding: 20px 50px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; transition: 0.4s; letter-spacing: 2px; font-size: 0.8rem; margin-top: 40px; }
+        .btn:hover { background: var(--primary); color: #fff; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        footer { padding: 100px 20px; text-align: center; font-size: 0.7rem; letter-spacing: 2px; color: #999; }
 
-        .section-title h2 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .product-card {
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 2px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .product-info {
-            margin-top: 25px;
-        }
-
-        .product-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            font-weight: 400;
-        }
-
-        .product-info p {
-            font-size: 0.85rem;
-            color: #777;
-        }
-
-        /* Contact Section */
-        .contact-area {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #f7f7f7;
-        }
-
-        .btn-line {
-            display: inline-block;
-            padding: 15px 40px;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .btn-line:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        footer {
-            padding: 50px 20px;
-            text-align: center;
-            font-size: 0.75rem;
-            color: #bbb;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .product-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 40px; } .hero h1 { font-size: 3rem; } }
     </style>
 </head>
 <body>
 
+    <nav data-aos="fade-down">KAPPA MATCHA OFFICIAL</nav>
+
     <section class="hero">
-        <h1>KAPPA MATCHA</h1>
-        <p>Direct from Uji, Kyoto</p>
+        <h1 data-aos="fade-up" data-aos-duration="1000">KAPPA MATCHA</h1>
+        <p data-aos="fade-up" data-aos-delay="300">The Art of Japanese Umami</p>
     </section>
 
-    <section class="content-section">
-        <div class="section-title">
-            <h2>OUR COLLECTIONS</h2>
-            <p>สัมผัสรสชาติอูมามิจากใบชาแท้คุณภาพพรีเมียม</p>
+    <div class="container">
+        <div class="intro" data-aos="fade-up">
+            <h2>Our Philosophy</h2>
+            <p>เราคัดสรรชาจากแหล่งปลูกที่ดีที่สุดในญี่ปุ่น เพื่อส่งมอบรสชาติที่แท้จริงถึงมือคุณ</p>
         </div>
 
-        <div class="product-grid">
-            <div class="product-card">
+        <div class="grid">
+            <div class="img-box" data-aos="fade-right">
                 <img src="product1.png" alt="Ceremonial Samidori">
-                <div class="product-info">
-                    <h3>Ceremonial Samidori</h3>
-                    <p>Single Cultivar from Uji, Kyoto</p>
-                </div>
             </div>
-            <div class="product-card">
-                <img src="product2.png" alt="Kappa Latte">
-                <div class="product-info">
-                    <h3>The Art of Umami</h3>
-                    <p>Perfectly balanced for your daily cup</p>
-                </div>
+            <div class="text-box" data-aos="fade-left">
+                <h3>Ceremonial Grade</h3>
+                <p>สัมผัสประสบการณ์การดื่มชาในแบบดั้งเดิม ด้วย Single Cultivar ที่คัดเลือกมาอย่างพิถีพิถัน</p>
             </div>
         </div>
-    </section>
 
-    <section class="contact-area">
-        <p>สอบถามรายละเอียดหรือสั่งซื้อสินค้า</p>
-        <a href="https://lin.ee/xxxxxx" class="btn-line">ORDER VIA LINE</a>
-    </section>
+        <div style="text-align: center; margin-top: 100px;" data-aos="zoom-in">
+            <a href="https://lin.ee/xxxxxx" class="btn">DISCOVER MORE ON LINE</a>
+        </div>
+    </div>
 
-    <footer>
-        &copy; 2026 KAPPA MATCHA OFFICIAL. ALL RIGHTS RESERVED.
-    </footer>
+    <footer>&copy; 2026 KAPPA MATCHA. PRIVACY POLICY.</footer>
 
+    <!-- Script สำหรับเล่น Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
