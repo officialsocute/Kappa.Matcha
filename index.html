@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kappa Matcha | Premium Japanese Tea</title>
+    <!-- นำเข้าฟอนต์ Google Fonts ให้ดูแพง -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Thai', sans-serif;
+            background-color: #fcfcfc; /* สีขาวนวลแบบญี่ปุ่น */
+            color: #333;
+        }
+
+        /* ส่วนหัว (Hero Section) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+                        url('ใส่ลิงก์รูปภาพหลักตรงนี้.jpg') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* ส่วนเนื้อหา */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px; /* มุมมนนิดเดียวแบบมินิมอล */
+        }
+
+        /* ปุ่มติดต่อ */
+        .btn-contact {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 35px;
+            border: 1px solid #333;
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 1px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>KAPPA MATCHA</h1>
+        <p>Authentic Japanese Green Tea</p>
+    </section>
+
+    <section class="content-section">
+        <h2>OUR PHILOSOPHY</h2>
+        <p>เราคัดสรรชาจากแหล่งปลูกที่ดีที่สุดในญี่ปุ่น เพื่อส่งมอบรสชาติที่แท้จริงถึงมือคุณ</p>
+
+        <div class="product-grid">
+            <!-- เอารูปที่ทำจาก Canva มาใส่ตรง src -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/400x500" alt="Product 1">
+                <p>Ceremonial Grade</p>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/400x500" alt="Product 2">
+                <p>Premium Culinary</p>
+            </div>
+        </div>
+
+        <a href="https://lin.ee/xxxxxx" class="btn-contact">ORDER VIA LINE</a>
+    </section>
+
+    <footer>
+        &copy; 2026 KAPPA MATCHA. ALL RIGHTS RESERVED.
+    </footer>
+
+</body>
+</html>
