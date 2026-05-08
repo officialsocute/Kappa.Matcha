@@ -27,43 +27,50 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--paper); color: var(--text); font-family: 'Shippori Mincho', 'Noto Sans Thai', serif; overflow-x: hidden; line-height: 1.6; }
         
-        nav { position: fixed; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; z-index: 1000; mix-blend-mode: difference; color: white; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 4px; }
+        nav { position: fixed; width: 100%; padding: 20px 30px; display: flex; justify-content: space-between; z-index: 1000; mix-blend-mode: difference; color: white; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 3px; }
         
         .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
         .hero img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
         .hero-content { position: relative; text-align: center; color: white; }
-        .hero-content h1 { font-size: clamp(4rem, 15vw, 9rem); letter-spacing: 20px; font-weight: 700; margin-bottom: 10px; }
-        .hero-content p { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 8px; opacity: 0.8; font-size: 0.9rem; }
+        .hero-content h1 { font-size: clamp(3.5rem, 15vw, 9rem); letter-spacing: 15px; font-weight: 700; margin-bottom: 10px; }
+        .hero-content p { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 6px; opacity: 0.8; font-size: 0.8rem; }
         
-        .story { padding: 150px 10% 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .story-text h2 { font-size: 3rem; margin-bottom: 30px; line-height: 1.2; }
-        .story-text p { margin-bottom: 20px; opacity: 0.8; }
+        .story { padding: 100px 8% 50px; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        .story-text h2 { font-size: 2.2rem; margin-bottom: 20px; line-height: 1.3; }
+        .story-text p { margin-bottom: 20px; opacity: 0.8; font-size: 0.95rem; }
         .map-img { width: 100%; border-radius: 5px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         
-        .highlight-grid { padding: 100px 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .highlight-item { position: relative; height: 500px; overflow: hidden; background: #eee; }
+        .highlight-grid { padding: 50px 5%; display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .highlight-item { position: relative; height: 400px; overflow: hidden; background: #eee; }
         .highlight-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
-        .highlight-item:hover img { transform: scale(1.1); }
-        .highlight-overlay { position: absolute; bottom: 30px; left: 30px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .highlight-overlay { position: absolute; bottom: 20px; left: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         
-        .diary-section { padding: 100px 5%; background: #fff; }
-        .diary-header { text-align: center; margin-bottom: 80px; }
-        .diary-header h3 { font-size: 2.5rem; letter-spacing: 5px; }
-        .diary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-        .diary-grid img, .diary-grid video { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: 0.5s; cursor: pointer; }
-        .diary-grid img:hover, .diary-grid video:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        /* Diary Grid: Default 2 columns for mobile */
+        .diary-section { padding: 80px 5%; background: #fff; }
+        .diary-header { text-align: center; margin-bottom: 50px; }
+        .diary-header h3 { font-size: 2rem; letter-spacing: 4px; }
+        .diary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .diary-grid img, .diary-grid video { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: 0.5s; }
         
-        .vertical-text { position: fixed; right: 40px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-size: 0.7rem; letter-spacing: 5px; opacity: 0.3; z-index: 1; }
+        .vertical-text { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; z-index: 1; pointer-events: none; }
         
-        footer { padding: 100px 5%; text-align: center; background: var(--matcha); color: white; }
-        .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 25px; }
-        .social-links a { color: white; font-size: 1.5rem; transition: 0.3s; opacity: 0.7; }
-        .social-links a:hover { opacity: 1; transform: translateY(-3px); }
+        footer { padding: 80px 5%; text-align: center; background: var(--matcha); color: white; }
+        .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: white; font-size: 1.3rem; opacity: 0.7; }
         
-        .btn { display: inline-block; padding: 15px 40px; border: 1px solid var(--matcha); text-decoration: none; color: var(--matcha); letter-spacing: 2px; font-size: 0.8rem; transition: 0.3s; margin-top: 20px; }
-        .btn:hover { background: var(--matcha); color: white; }
-        
-        @media (max-width: 768px) { .story { grid-template-columns: 1fr; } .highlight-grid { grid-template-columns: 1fr; } }
+        .btn { display: inline-block; padding: 12px 30px; border: 1px solid var(--matcha); text-decoration: none; color: var(--matcha); letter-spacing: 2px; font-size: 0.75rem; transition: 0.3s; margin-top: 10px; }
+
+        /* Desktop Adjustments */
+        @media (min-width: 768px) {
+            nav { padding: 30px 50px; font-size: 0.7rem; }
+            .story { grid-template-columns: 1fr 1fr; padding: 150px 10% 50px; gap: 80px; }
+            .story-text h2 { font-size: 3rem; }
+            .highlight-grid { grid-template-columns: repeat(3, 1fr); padding: 100px 5%; gap: 20px; }
+            .highlight-item { height: 500px; }
+            .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
+            .diary-header h3 { font-size: 2.5rem; }
+            .vertical-text { right: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -123,7 +130,7 @@
     <section class="diary-section">
         <div class="diary-header" data-aos="fade-up">
             <h3>MATCHA DIARY</h3>
-            <p>日常の中の緑 | Everyday with Kappa</p>
+            <p>日常の中ของ緑 | Everyday with Kappa</p>
         </div>
         <div class="diary-grid">
             <img src="images/product3.png" data-aos="fade-up">
@@ -158,7 +165,6 @@
             <img src="images/product38.png" data-aos="fade-up">
             <img src="images/product39.png" data-aos="fade-up">
             <img src="images/product40.png" data-aos="fade-up">
-            <!-- ตัด product41.png ออกเพื่อให้แถวสุดท้ายครบจำนวนพอดี -->
         </div>
     </section>
 
