@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    
     <title>KAPPA MATCHA | Uji Matcha</title>
     
-    <!-- Primary Meta Tags -->
+    <!-- SEO & Keywords Update -->
     <meta name="title" content="KAPPA MATCHA | Uji Matcha">
-    <meta name="description" content="Ceremonial SAMIDORI From Uji, Kyoto. Premium quality for your everyday matcha ritual.">
+    <meta name="description" content="Premium Ceremonial Grade Matcha from Uji, Kyoto. Featuring Samidori cultivar for the ultimate matcha ritual. Exclusive Japanese tea by Kappa Matcha.">
+    <meta name="keywords" content="Matcha, Uji Matcha, Ceremonial Grade, Samidori, Japanese Tea, Kappa Matcha, มัทฉะ, อูจิมัทฉะ">
 
     <!-- Open Graph / Facebook / LINE -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://officialsocute.github.io/Kappa.Matcha/">
+    <meta property="og:url" content="https://kappamatcha.store/">
     <meta property="og:title" content="KAPPA MATCHA | Uji Matcha">
     <meta property="og:description" content="Ceremonial SAMIDORI From Uji, Kyoto. Premium quality for your everyday matcha ritual.">
     <meta property="og:image" content="https://officialsocute.github.io/Kappa.Matcha/images/product2.png">
@@ -45,7 +50,6 @@
         .highlight-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
         .highlight-overlay { position: absolute; bottom: 20px; left: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         
-        /* Diary Grid: Default 2 columns for mobile */
         .diary-section { padding: 80px 5%; background: #fff; }
         .diary-header { text-align: center; margin-bottom: 50px; }
         .diary-header h3 { font-size: 2rem; letter-spacing: 4px; }
@@ -60,6 +64,29 @@
         
         .btn { display: inline-block; padding: 12px 30px; border: 1px solid var(--matcha); text-decoration: none; color: var(--matcha); letter-spacing: 2px; font-size: 0.75rem; transition: 0.3s; margin-top: 10px; }
 
+        /* Floating Order Button - Mobile Only */
+        .float-order {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--matcha);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .float-order:hover { transform: scale(1.05); }
+
         /* Desktop Adjustments */
         @media (min-width: 768px) {
             nav { padding: 30px 50px; font-size: 0.7rem; }
@@ -70,6 +97,7 @@
             .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
             .diary-header h3 { font-size: 2.5rem; }
             .vertical-text { right: 40px; }
+            .float-order { display: none; } /* ซ่อนบนคอม */
         }
     </style>
 </head>
@@ -80,9 +108,15 @@
         <div>KAPPA MATCHA OFFICIAL</div>
     </nav>
 
+    <!-- Floating Order Button -->
+    <a href="https://linktr.ee/KappaMatcha" class="float-order" target="_blank">
+        <i class="fas fa-shopping-cart"></i> LINE / SHOP
+    </a>
+
     <div class="vertical-text">宇治の伝統的な心。完璧な緑のしずく。</div>
 
     <section class="hero">
+        <!-- รูป Hero ไม่ใส่ Lazy เพื่อให้โหลดทันทีเมื่อเปิดเว็บ -->
         <img src="images/product2.png" alt="Kappa Hero">
         <div class="hero-content" data-aos="fade-up">
             <h1>KAPPA</h1>
@@ -92,7 +126,7 @@
 
     <section class="story">
         <div class="story-img" data-aos="fade-right">
-            <img src="images/product14.png" class="map-img" alt="Origin">
+            <img src="images/product14.png" class="map-img" alt="Origin" loading="lazy">
         </div>
         <div class="story-text" data-aos="fade-left">
             <p style="color: var(--gold);">宇治・京都 | UJI KYOTO</p>
@@ -105,21 +139,21 @@
 
     <section class="highlight-grid">
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/product1.png" alt="The Tin">
+            <img src="images/product1.png" alt="The Tin" loading="lazy">
             <div class="highlight-overlay">
                 <p>01 / THE TIN</p>
                 <h4>真空パック | Purity</h4>
             </div>
         </div>
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/product6.png" alt="Process">
+            <img src="images/product6.png" alt="Process" loading="lazy">
             <div class="highlight-overlay">
                 <p>02 / THE ART</p>
                 <h4>茶の湯 | Whisking</h4>
             </div>
         </div>
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
-            <img src="images/product33.png" alt="Apparel">
+            <img src="images/product33.png" alt="Apparel" loading="lazy">
             <div class="highlight-overlay">
                 <p>03 / STYLE</p>
                 <h4>ウェア | Kappa Wear</h4>
@@ -130,41 +164,42 @@
     <section class="diary-section">
         <div class="diary-header" data-aos="fade-up">
             <h3>MATCHA DIARY</h3>
-            <p>日常の中ของ緑 | Everyday with Kappa</p>
+            <p>日常の中の緑 | Everyday with Kappa</p>
         </div>
         <div class="diary-grid">
-            <img src="images/product3.png" data-aos="fade-up">
-            <img src="images/product4.png" data-aos="fade-up">
-            <img src="images/product7.png" data-aos="fade-up">
-            <img src="images/product9.png" data-aos="fade-up">
-            <img src="images/product10.png" data-aos="fade-up">
+            <!-- ใส่ loading="lazy" ทุกรูปใน Grid เพื่อประสิทธิภาพสูงสุด -->
+            <img src="images/product3.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product4.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product7.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product9.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product10.png" data-aos="fade-up" loading="lazy">
             <video autoplay muted loop playsinline data-aos="fade-up">
                 <source src="images/mp41.mp4" type="video/mp4">
             </video>
-            <img src="images/product12.png" data-aos="fade-up">
-            <img src="images/product13.png" data-aos="fade-up">
-            <img src="images/product15.png" data-aos="fade-up">
-            <img src="images/product16.png" data-aos="fade-up">
-            <img src="images/product17.png" data-aos="fade-up">
-            <img src="images/product18.png" data-aos="fade-up">
-            <img src="images/product19.png" data-aos="fade-up">
-            <img src="images/product20.png" data-aos="fade-up">
-            <img src="images/product21.png" data-aos="fade-up">
+            <img src="images/product12.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product13.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product15.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product16.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product17.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product18.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product19.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product20.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product21.png" data-aos="fade-up" loading="lazy">
             <video autoplay muted loop playsinline data-aos="fade-up">
                 <source src="images/mp42.mp4" type="video/mp4">
             </video>
-            <img src="images/product22.png" data-aos="fade-up">
-            <img src="images/product23.png" data-aos="fade-up">
-            <img src="images/product25.png" data-aos="fade-up">
-            <img src="images/product26.png" data-aos="fade-up">
-            <img src="images/product27.png" data-aos="fade-up">
-            <img src="images/product32.png" data-aos="fade-up">
-            <img src="images/product34.png" data-aos="fade-up">
-            <img src="images/product35.png" data-aos="fade-up">
-            <img src="images/product36.png" data-aos="fade-up">
-            <img src="images/product38.png" data-aos="fade-up">
-            <img src="images/product39.png" data-aos="fade-up">
-            <img src="images/product40.png" data-aos="fade-up">
+            <img src="images/product22.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product23.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product25.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product26.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product27.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product32.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product34.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product35.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product36.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product38.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product39.png" data-aos="fade-up" loading="lazy">
+            <img src="images/product40.png" data-aos="fade-up" loading="lazy">
         </div>
     </section>
 
