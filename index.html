@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo1.png">
     
     <title>KAPPA MATCHA | Uji Matcha</title>
     
-    <!-- SEO & Keywords Update -->
     <meta name="title" content="KAPPA MATCHA | Uji Matcha">
     <meta name="description" content="Premium Ceremonial Grade Matcha from Uji, Kyoto. Featuring Samidori cultivar for the ultimate matcha ritual. Exclusive Japanese tea by Kappa Matcha.">
     <meta name="keywords" content="Matcha, Uji Matcha, Ceremonial Grade, Samidori, Japanese Tea, Kappa Matcha, มัทฉะ, อูจิมัทฉะ">
 
-    <!-- Open Graph / Facebook / LINE -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kappamatcha.store/">
     <meta property="og:title" content="KAPPA MATCHA | Uji Matcha">
     <meta property="og:description" content="Ceremonial SAMIDORI From Uji, Kyoto. Premium quality for your everyday matcha ritual.">
     <meta property="og:image" content="https://officialsocute.github.io/Kappa.Matcha/images/product2.png">
 
-    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Montserrat:wght@300;600&family=Noto+Sans+Thai:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -56,7 +52,8 @@
         .diary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .diary-grid img, .diary-grid video { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: 0.5s; }
         
-        .vertical-text { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; z-index: 1; pointer-events: none; }
+        /* Vertical Text - Adjusted for Mobile (+20%) */
+        .vertical-text { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-size: 0.72rem; letter-spacing: 4px; opacity: 0.3; z-index: 1; pointer-events: none; }
         
         footer { padding: 80px 5%; text-align: center; background: var(--matcha); color: white; }
         .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
@@ -87,7 +84,7 @@
         }
         .float-order:hover { transform: scale(1.05); }
 
-        /* Desktop Adjustments */
+        /* Desktop Adjustments (+10% for Vertical Text) */
         @media (min-width: 768px) {
             nav { padding: 30px 50px; font-size: 0.7rem; }
             .story { grid-template-columns: 1fr 1fr; padding: 150px 10% 50px; gap: 80px; }
@@ -96,7 +93,7 @@
             .highlight-item { height: 500px; }
             .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
             .diary-header h3 { font-size: 2.5rem; }
-            .vertical-text { right: 40px; }
+            .vertical-text { right: 40px; font-size: 0.77rem; }
             .float-order { display: none; }
         }
     </style>
@@ -108,12 +105,11 @@
         <div>KAPPA MATCHA OFFICIAL</div>
     </nav>
 
-    <!-- Floating Order Button -->
     <a href="https://linktr.ee/KappaMatcha" class="float-order" target="_blank">
         <i class="fas fa-shopping-cart"></i> LINE / SHOP
     </a>
 
-    <div class="vertical-text">宇治の伝統的な心。完璧な緑ของしずく。</div>
+    <div class="vertical-text">宇治の伝統的な心。完璧な緑のしずく。</div>
 
     <section class="hero">
         <img src="images/product2.png" alt="Kappa Hero">
