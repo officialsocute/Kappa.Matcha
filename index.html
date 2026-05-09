@@ -7,28 +7,27 @@
     
     <link rel="icon" type="image/png" href="images/logo1.png">
     
-    <title>KAPPA MATCHA | Uji Matcha</title>
+    <title>KAPPA MATCHA | 宇治抹茶・至福の一杯</title>
     
-    <meta name="title" content="KAPPA MATCHA | Uji Matcha">
-    <meta name="description" content="Premium Ceremonial Grade Matcha from Uji, Kyoto. Featuring Samidori cultivar for the ultimate matcha ritual. Exclusive Japanese tea by Kappa Matcha.">
-    <meta name="keywords" content="Matcha, Uji Matcha, Ceremonial Grade, Samidori, Japanese Tea, Kappa Matcha, มัทฉะ, อูจิมัทฉะ">
+    <meta name="description" content="Premium Ceremonial Grade Matcha from Uji, Kyoto. Cultivated with tradition, crafted for perfection.">
+    <meta name="keywords" content="Matcha, Uji Matcha, Ceremonial Grade, Samidori, Japanese Tea, Kyoto">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kappamatcha.store/">
     <meta property="og:title" content="KAPPA MATCHA | Uji Matcha">
     <meta property="og:description" content="Ceremonial SAMIDORI From Uji, Kyoto. Premium quality for your everyday matcha ritual.">
     <meta property="og:image" content="https://officialsocute.github.io/Kappa.Matcha/images/product2.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Montserrat:wght@300;600&family=Noto+Sans+Thai:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
         :root { --matcha: #2d4635; --paper: #f8f5f0; --gold: #b5a489; --text: #1a1a1a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--paper); color: var(--text); font-family: 'Shippori Mincho', 'Noto Sans Thai', serif; overflow-x: hidden; line-height: 1.6; }
+        body { background: var(--paper); color: var(--text); font-family: 'Shippori Mincho', serif; overflow-x: hidden; line-height: 1.6; }
         
         nav { position: fixed; width: 100%; padding: 20px 30px; display: flex; justify-content: space-between; z-index: 1000; mix-blend-mode: difference; color: white; font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 3px; }
+        .nav-lang a { color: white; text-decoration: none; opacity: 0.6; transition: 0.3s; }
+        .nav-lang a:hover { opacity: 1; }
         
         .hero { height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
         .hero img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
@@ -52,39 +51,15 @@
         .diary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .diary-grid img, .diary-grid video { width: 100%; aspect-ratio: 1/1; object-fit: cover; transition: 0.5s; }
         
-        /* Vertical Text - Adjusted for Mobile (+20%) */
         .vertical-text { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-size: 0.72rem; letter-spacing: 4px; opacity: 0.3; z-index: 1; pointer-events: none; }
         
         footer { padding: 80px 5%; text-align: center; background: var(--matcha); color: white; }
         .social-links { margin-bottom: 30px; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: white; font-size: 1.3rem; opacity: 0.7; }
+        .social-links a { color: white; font-size: 1.3rem; opacity: 0.7; transition: 0.3s; }
+        .social-links a:hover { opacity: 1; transform: translateY(-3px); }
         
         .btn { display: inline-block; padding: 12px 30px; border: 1px solid var(--matcha); text-decoration: none; color: var(--matcha); letter-spacing: 2px; font-size: 0.75rem; transition: 0.3s; margin-top: 10px; }
 
-        /* Floating Order Button - Mobile Only */
-        .float-order {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: var(--matcha);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-        .float-order:hover { transform: scale(1.05); }
-
-        /* Desktop Adjustments (+10% for Vertical Text) */
         @media (min-width: 768px) {
             nav { padding: 30px 50px; font-size: 0.7rem; }
             .story { grid-template-columns: 1fr 1fr; padding: 150px 10% 50px; gap: 80px; }
@@ -94,7 +69,6 @@
             .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
             .diary-header h3 { font-size: 2.5rem; }
             .vertical-text { right: 40px; font-size: 0.77rem; }
-            .float-order { display: none; }
         }
     </style>
 </head>
@@ -102,12 +76,10 @@
 
     <nav>
         <div>EST. 2024</div>
-        <div>KAPPA MATCHA OFFICIAL</div>
+        <div class="nav-lang">
+            <span>GLOBAL</span> / <a href="th/">THAILAND</a>
+        </div>
     </nav>
-
-    <a href="https://linktr.ee/KappaMatcha" class="float-order" target="_blank">
-        <i class="fas fa-shopping-cart"></i> LINE / SHOP
-    </a>
 
     <div class="vertical-text">宇治の伝統的な心。完璧な緑のしずく。</div>
 
@@ -126,9 +98,9 @@
         <div class="story-text" data-aos="fade-left">
             <p style="color: var(--gold);">宇治・京都 | UJI KYOTO</p>
             <h2>至福の一杯、<br>究極の「和」を。</h2>
-            <p>Our journey begins in the mist-covered fields of Uji. คัดสรรเฉพาะสายพันธุ์ Samidori ที่ดีที่สุดเพื่อสุนทรียภาพแห่งมัทฉะอย่างแท้จริง</p>
-            <p>The core of Japanese tradition meets modern lifestyle. 伝統と革新の融合。</p>
-            <a href="https://www.instagram.com/kappa.matcha/" class="btn">DISCOVER MORE</a>
+            <p>Our journey begins in the mist-covered fields of Uji, Kyoto. We select only the finest <b>Samidori</b> cultivar to deliver an authentic ceremonial experience.</p>
+            <p>伝統と革新の融合。Experience the soul of Japanese tradition in every drop of our meticulously crafted matcha.</p>
+            <a href="https://www.instagram.com/kappamatcha.jp/" target="_blank" class="btn">OUR INSTAGRAM</a>
         </div>
     </section>
 
@@ -136,22 +108,22 @@
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
             <img src="images/product1.png" alt="The Tin" loading="lazy">
             <div class="highlight-overlay">
-                <p>01 / THE TIN</p>
-                <h4>真空パック | Purity</h4>
+                <p>01 / PACKAGING</p>
+                <h4>真空パック | Purity Sealed</h4>
             </div>
         </div>
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
             <img src="images/product6.png" alt="Process" loading="lazy">
             <div class="highlight-overlay">
-                <p>02 / THE ART</p>
-                <h4>茶の湯 | Whisking</h4>
+                <p>02 / TRADITION</p>
+                <h4>茶の湯 | Ancient Ritual</h4>
             </div>
         </div>
         <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
             <img src="images/product33.png" alt="Apparel" loading="lazy">
             <div class="highlight-overlay">
-                <p>03 / STYLE</p>
-                <h4>ウェア | Kappa Wear</h4>
+                <p>03 / LIFESTYLE</p>
+                <h4>ウェア | Kappa Collection</h4>
             </div>
         </div>
     </section>
@@ -195,9 +167,7 @@
 
     <footer data-aos="fade-up">
         <div class="social-links">
-            <a href="https://www.facebook.com/KappaMatcha/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/kappa.matcha/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://linktr.ee/KappaMatcha" target="_blank"><i class="fas fa-link"></i></a>
+            <a href="https://www.instagram.com/kappamatcha.jp/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <h2 style="letter-spacing: 10px; margin-bottom: 20px;">KAPPA</h2>
         <p>Brew your soul in silence.</p>
