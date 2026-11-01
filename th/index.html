@@ -67,16 +67,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    /* ซ่อนป้าย Powered by Elfsight และลิงก์เครดิตแบบเด็ดขาด */
-    .eapps-instagram-feed-badge,
-    .eapps-widget-badge,
-    a[href*="elfsight.com/instagram-feed-widget"] {
-      display: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      overflow: hidden !important;
-    }
     
     .vertical-text { 
       position: fixed; 
@@ -219,5 +209,23 @@
  
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
+
+  <!-- Script ลบป้าย Elfsight แบบเจาะ Shadow DOM -->
+  <script>
+    function removeElfsightBadge() {
+      const widget = document.querySelector('.elfsight-app-265af5e2-70ff-4bcf-90af-2f9fe5ed55e8');
+      if (widget && widget.shadowRoot) {
+        const badge = widget.shadowRoot.querySelector('a[href*="elfsight.com"]');
+        if (badge) {
+          // ค้นหาโหนดแม่เพื่อลบออกทั้งกล่อง
+          const badgeContainer = badge.closest('div') || badge;
+          badgeContainer.remove();
+        }
+      }
+    }
+    // สแกนลบทุกๆ 0.5 วินาทีในช่วง 5 วินาทีแรกที่โหลดเว็บ
+    const interval = setInterval(removeElfsightBadge, 500);
+    setTimeout(() => clearInterval(interval), 5000);
+  </script>
 </body>
 </html>
