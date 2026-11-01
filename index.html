@@ -55,14 +55,49 @@
     .highlight-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
     .highlight-overlay { position: absolute; bottom: 20px; left: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
     
+    /* Diary Section & Grid Style */
     .diary-section { padding: 80px 5%; background: #fff; }
     .diary-header { text-align: center; margin-bottom: 50px; }
     .diary-header h3 { font-size: 2rem; letter-spacing: 4px; }
     
-    /* สไตล์สำหรับกล่อง Instagram Auto-Feed Widget */
-    .instagram-feed-container { width: 100%; margin: 0 auto; }
-    .instagram-feed-container img { border-radius: 2px; transition: 0.5s ease; }
-    .instagram-feed-container img:hover { opacity: 0.9; transform: scale(1.01); }
+    .diary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .diary-item {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f0f0f0;
+      display: block;
+    }
+    .diary-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .diary-item:hover img {
+      transform: scale(1.03);
+    }
+    .diary-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .diary-item:hover .diary-overlay {
+      opacity: 1;
+    }
     
     .vertical-text { 
       position: fixed; 
@@ -91,6 +126,7 @@
       .highlight-grid { grid-template-columns: repeat(3, 1fr); padding: 100px 5%; gap: 20px; }
       .highlight-item { height: 500px; }
       .diary-header h3 { font-size: 2.5rem; }
+      .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
       .vertical-text { right: 40px; font-size: 0.75rem; }
     }
   </style>
@@ -152,34 +188,29 @@
     </div>
   </section>
 
-  <!-- ส่วนแสดงรูปภาพจาก Instagram แบบอัตโนมัติ -->
+  <!-- Matcha Diary: Instagram Grid (15 Posts) -->
   <section class="diary-section">
     <div class="diary-header" data-aos="fade-up">
       <h3>MATCHA DIARY</h3>
       <p>日常の中の緑 | Everyday with Kappa</p>
     </div>
-    <div class="instagram-feed-container" data-aos="fade-up">
-      <behold-widget feed-id="VZcfuujs5mCwxYmmtjtp"></behold-widget>
-      <script>
-        (() => {
-          if(window.__bhldScript)return;window.__bhldScript=true;
-          const d=document,s=d.createElement("script");s.type="module";
-          s.src="https://w.behold.so/widget.js";setTimeout(()=>{d.head.append(s);},0);
-        })();
-      </script>
-    </div>
-  </section>
- 
-  <footer data-aos="fade-up">
-    <div class="social-links">
-      <a href="https://www.instagram.com/kappamatcha.jp/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-    <h2 style="letter-spacing: 10px; margin-bottom: 20px;">KAPPA</h2>
-    <p>Brew your soul in silence.</p>
-    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 50px;">© 2024 KAPPA MATCHA. ALL RIGHTS RESERVED.</p>
-  </footer>
- 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000, once: true });</script>
-</body>
-</html>
+    <div class="diary-grid" data-aos="fade-up">
+      <!-- 1 -->
+      <a href="https://www.instagram.com/p/DfFAw_qTUXb/" target="_blank" class="diary-item">
+        <img src="images/product1.png" alt="Matcha Diary 1" loading="lazy">
+        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
+      </a>
+      <!-- 2 -->
+      <a href="https://www.instagram.com/p/De_mMm_jwrP/" target="_blank" class="diary-item">
+        <img src="images/product2.png" alt="Matcha Diary 2" loading="lazy">
+        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
+      </a>
+      <!-- 3 -->
+      <a href="https://www.instagram.com/p/De9C_WEj3Gv/" target="_blank" class="diary-item">
+        <img src="images/product3.png" alt="Matcha Diary 3" loading="lazy">
+        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
+      </a>
+      <!-- 4 -->
+      <a href="https://www.instagram.com/p/Dei2mcGA3J-/" target="_blank" class="diary-item">
+        <img src="images/product6.png" alt="Matcha Diary 4" loading="lazy">
+        <div class="diary-overlay
