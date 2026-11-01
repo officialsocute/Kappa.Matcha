@@ -68,10 +68,14 @@
       margin: 0 auto;
     }
 
-    /* ซ่อนป้ายเครดิต Powered by Elfsight ทาง CSS แบบถาวร */
-    .instagram-feed-container [href*="elfsight.com"],
-    .instagram-feed-container a[href*="platforms"] {
+    /* ซ่อนป้าย Powered by Elfsight และลิงก์เครดิตแบบเด็ดขาด */
+    .eapps-instagram-feed-badge,
+    .eapps-widget-badge,
+    a[href*="elfsight.com/instagram-feed-widget"] {
       display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      overflow: hidden !important;
     }
     
     .vertical-text { 
