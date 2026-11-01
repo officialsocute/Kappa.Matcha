@@ -55,48 +55,15 @@
     .highlight-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s; }
     .highlight-overlay { position: absolute; bottom: 20px; left: 20px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
     
-    /* Diary Section & Grid Style */
+    /* Diary Section & Elfsight Widget Style */
     .diary-section { padding: 80px 5%; background: #fff; }
     .diary-header { text-align: center; margin-bottom: 50px; }
     .diary-header h3 { font-size: 2rem; letter-spacing: 4px; }
     
-    .diary-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+    .instagram-feed-container {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-    }
-    .diary-item {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #f0f0f0;
-      display: block;
-    }
-    .diary-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .diary-item:hover img {
-      transform: scale(1.03);
-    }
-    .diary-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      color: white;
-      font-size: 1.5rem;
-    }
-    .diary-item:hover .diary-overlay {
-      opacity: 1;
     }
     
     .vertical-text { 
@@ -126,7 +93,6 @@
       .highlight-grid { grid-template-columns: repeat(3, 1fr); padding: 100px 5%; gap: 20px; }
       .highlight-item { height: 500px; }
       .diary-header h3 { font-size: 2.5rem; }
-      .diary-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
       .vertical-text { right: 40px; font-size: 0.75rem; }
     }
   </style>
@@ -188,88 +154,15 @@
     </div>
   </section>
 
-  <!-- Matcha Diary: Instagram Grid (15 Posts) -->
+  <!-- Matcha Diary: Elfsight Instagram Widget -->
   <section class="diary-section">
     <div class="diary-header" data-aos="fade-up">
       <h3>MATCHA DIARY</h3>
       <p>日常の中の緑 | Everyday with Kappa</p>
     </div>
-    <div class="diary-grid" data-aos="fade-up">
-      <!-- 1 -->
-      <a href="https://www.instagram.com/p/DfFAw_qTUXb/" target="_blank" class="diary-item">
-        <img src="images/product1.png" alt="Matcha Diary 1" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 2 -->
-      <a href="https://www.instagram.com/p/De_mMm_jwrP/" target="_blank" class="diary-item">
-        <img src="images/product2.png" alt="Matcha Diary 2" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 3 -->
-      <a href="https://www.instagram.com/p/De9C_WEj3Gv/" target="_blank" class="diary-item">
-        <img src="images/product3.png" alt="Matcha Diary 3" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 4 -->
-      <a href="https://www.instagram.com/p/Dei2mcGA3J-/" target="_blank" class="diary-item">
-        <img src="images/product6.png" alt="Matcha Diary 4" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 5 -->
-      <a href="https://www.instagram.com/p/DePbvXHj3Dv/" target="_blank" class="diary-item">
-        <img src="images/product14.png" alt="Matcha Diary 5" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 6 -->
-      <a href="https://www.instagram.com/p/DeBwHDnj8HH/" target="_blank" class="diary-item">
-        <img src="images/product33.png" alt="Matcha Diary 6" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 7 -->
-      <a href="https://www.instagram.com/p/Dd5ZDwWD8Yg/" target="_blank" class="diary-item">
-        <img src="images/product1.png" alt="Matcha Diary 7" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 8 -->
-      <a href="https://www.instagram.com/p/DdoS2D4Dw18/" target="_blank" class="diary-item">
-        <img src="images/product2.png" alt="Matcha Diary 8" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 9 -->
-      <a href="https://www.instagram.com/p/DdnbGU8jzE5/" target="_blank" class="diary-item">
-        <img src="images/product3.png" alt="Matcha Diary 9" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 10 -->
-      <a href="https://www.instagram.com/p/Dddp09kD98L/" target="_blank" class="diary-item">
-        <img src="images/product6.png" alt="Matcha Diary 10" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 11 -->
-      <a href="https://www.instagram.com/p/DdbMnNPD_PY/" target="_blank" class="diary-item">
-        <img src="images/product14.png" alt="Matcha Diary 11" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 12 -->
-      <a href="https://www.instagram.com/p/DdJqp6Qj5BN/" target="_blank" class="diary-item">
-        <img src="images/product33.png" alt="Matcha Diary 12" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 13 -->
-      <a href="https://www.instagram.com/p/Dc3l3KMj_Z0/" target="_blank" class="diary-item">
-        <img src="images/product1.png" alt="Matcha Diary 13" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 14 -->
-      <a href="https://www.instagram.com/p/DcqfW_HDxY-/" target="_blank" class="diary-item">
-        <img src="images/product2.png" alt="Matcha Diary 14" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
-      <!-- 15 -->
-      <a href="https://www.instagram.com/p/DcQ7Xh7D5ec/" target="_blank" class="diary-item">
-        <img src="images/product3.png" alt="Matcha Diary 15" loading="lazy">
-        <div class="diary-overlay"><i class="fab fa-instagram"></i></div>
-      </a>
+    <div class="instagram-feed-container" data-aos="fade-up">
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-265af5e2-70ff-4bcf-90af-2f9fe5ed55e8" data-elfsight-app-lazy></div>
     </div>
   </section>
  
